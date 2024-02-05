@@ -1,0 +1,19 @@
+# --- Set Core Paths ---
+
+	SCE_PATH = $(SCE_ROOT)
+	SCE_CORE = $(SCE_PATH)MicroStation Core/
+	SCE_CORE_WORKSPACE = $(SCE_CORE)Workspace/
+	SCE_APP_ROOT = $(SCE_CONFIGROOT)Software/$(SCE_SOFTWARE)/
+	SCE_WORKSPACE = $(SCE_APP_ROOT)Workspace/
+
+# --- Launch MicroStation SCE ---
+
+	%if exists ($(SCE_CORE)Config/SCECore.cfg)				
+		%include $(SCE_CORE)Config/SCECore.cfg	
+	%endif
+
+	%if exists ($(SCE_APP_ROOT)Config/SCECore.cfg)				
+		%include $(SCE_APP_ROOT)Config/SCECore.cfg	
+	%endif
+
+	
